@@ -154,12 +154,13 @@ Or click the **Open in Colab** badge above to run the notebook directly in your 
 - Machine Learning with Python
 
 ---
-
-## 👨💻 Author
+## 👨‍💻 Author
 
 **Emmanuel Ejima**
 
-Chemical Engineering Graduate | Data Scientist | Machine Learning Enthusiast | AI Enthusiast
+Passionate about Data Science, Machine Learning, and Artificial Intelligence, with a focus on applying data-driven techniques to solve real-world problems through analytics and predictive modeling.
+
 
 - **GitHub:** https://github.com/EmmanuelEjima
-- **LinkedIn:** *(Add your LinkedIn profile URL)*
+- **LinkedIn:**
+  https://linkedin.com/in/emmanuel-ejima
