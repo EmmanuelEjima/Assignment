@@ -1,139 +1,115 @@
-# 🚀 Data Science & Machine Learning Portfolio
 
-Welcome!
+````markdown
+# 🍔 McDonald's Customer Reviews Topic Modeling using Latent Dirichlet Allocation (LDA)
 
-Hi, I'm **Emmanuel Ejima**, a Chemical Engineering graduate passionate about **Data Science, Machine Learning, Artificial Intelligence, and Renewable Energy**.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/EmmanuelEjima/Data-Science-Machine-Learning-Portfolio/blob/main/projects/McDonalds-Topic-Modeling/McDonalds-Topic-Modeling.ipynb)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
+![NLP](https://img.shields.io/badge/NLP-Topic%20Modeling-success)
+![LDA](https://img.shields.io/badge/Model-LDA-red)
 
-This repository showcases my end-to-end data science and machine learning projects, demonstrating skills in data analysis, visualization, predictive modeling, deployment, and reproducible machine learning workflows.
+## 📌 Project Overview
 
+This project applies **Natural Language Processing (NLP)** and **Latent Dirichlet Allocation (LDA)** to analyze **33,396 McDonald's customer reviews** and uncover hidden topics in customer feedback.
 
-# 📂 Portfolio Projects
+By automatically discovering recurring themes, the model provides actionable insights into customer satisfaction, service quality, and restaurant operations.
 
+---
 
-# ⭐ Featured Project: Breast Cancer Diagnostic Assistant
+## 🔗 Project Resources
 
-## 📷 Application Preview
+- 📓 **Notebook:** [McDonalds-Topic-Modeling.ipynb](McDonalds-Topic-Modeling.ipynb)
+- ☁️ **Google Colab:** [Open in Colab](https://colab.research.google.com/github/EmmanuelEjima/Data-Science-Machine-Learning-Portfolio/blob/main/projects/McDonalds-Topic-Modeling/McDonalds-Topic-Modeling.ipynb)
+- 🌐 **Interactive LDA Visualization:** [McDonalds_LDA.html](McDonalds_LDA.html)
+- 📄 **Technical Report:** [report.pdf](report.pdf)
 
-<p align="center">
-  <img src="projects/breast-cancer-diagnostic-app/images/app-preview.jpg"
-       alt="Breast Cancer Diagnostic Assistant"
-       width="900">
-</p>
+> **Note:** GitHub does not render interactive HTML files directly. Download `McDonalds_LDA.html` and open it in your browser to explore the interactive topic visualization.
 
-An end-to-end Machine Learning web application that predicts whether a breast tumor is **Malignant** or **Benign** using the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset.
+---
 
-### 🔗 Quick Links
+## 🎯 Objectives
 
-- 🚀 **Live Demo:** https://breast-cancer-diagnostic-assistant.streamlit.app/
-- 📂 **Project Folder:** https://github.com/EmmanuelEjima/Data-Science-Machine-Learning-Portfolio/tree/main/projects/breast-cancer-diagnostic-app
-- 📓 **Open in Colab:** https://colab.research.google.com/github/EmmanuelEjima/Data-Science-Machine-Learning-Portfolio/blob/main/projects/breast-cancer-diagnostic-app/Breast%20Cancer%20Detection%20Model.ipynb
+- Clean and preprocess customer review text
+- Build an LDA topic model
+- Discover hidden discussion topics
+- Analyze topic distributions
+- Explore the relationship between topics and customer ratings
 
-### Technologies
+---
 
-Python • Streamlit • Scikit-learn • Pandas • NumPy • Joblib • Google Colab • Git • GitHub
+## 📂 Project Structure
 
+```text
+McDonalds-Topic-Modeling/
+│
+├── dataset/
+│   └── McDonalds_Reviews.csv
+│
+├── images/
+│   ├── rating_distribution.png
+│   └── topic_ratings.png
+│
+├── McDonalds-Topic-Modeling.ipynb
+├── McDonalds_LDA.html
+├── report.pdf
+├── requirements.txt
+└── README.md
+```
 
+---
 
-
-
-### 🚢 Titanic Survival Analysis
-
-**Objective**
-
-Perform a comprehensive Exploratory Data Analysis (EDA) to uncover the factors influencing passenger survival aboard the Titanic.
-
-**Key Skills**
-
-- Exploratory Data Analysis (EDA)
-- Data Cleaning
-- Data Visualization
-- Statistical Analysis
-
-**Technologies**
-
-Python • Pandas • NumPy • Matplotlib • Seaborn
-
-📁 **Project Folder**
-
-[View Project](./projects/Titanic-Survival-EDA/)
-
-📓 **Notebook**
-
-[Titanic_Survival_EDA.ipynb](./projects/Titanic-Survival-EDA/Titanic_Survival_EDA.ipynb)
-
-
-
-### 🛒 Supermarket Sales Prediction
-
-**Objective**
-
-Develop a machine learning regression model to predict supermarket sales and generate actionable business insights.
-
-**Key Skills**
-
-- Data Cleaning
-- Feature Engineering
-- Regression Modeling
-- Model Evaluation
-
-**Technologies**
-
-Python • Pandas • NumPy • Scikit-learn • Matplotlib
-
-📁 **Project Folder**
-
-[View Project](./projects/Supermarket-Sales-Prediction/)
-
-📓 **Notebook**
-
-[Supermarket_Sales_Prediction.ipynb](./projects/Supermarket-Sales-Prediction/Supermarket_Sales_Prediction.ipynb)
-
-
-
-### ☀️ Solar Power Generation Prediction
-
-**Objective**
-
-Build a machine learning model to predict solar power generation for renewable energy planning and optimization.
-
-**Key Skills**
-
-- Data Analysis
-- Regression
-- Renewable Energy Analytics
-- Predictive Modeling
-
-**Technologies**
-
-Python • Pandas • Scikit-learn • Matplotlib
-
-📁 **Project Folder**
-
-[View Project](./projects/Solar-Power-Prediction/)
-
-📓 **Notebook**
-
-[Solar_Prediction.ipynb](./projects/Solar-Power-Prediction/Solar_Prediction.ipynb)
-
-
-
-## 🛠️ Tech Stack
+## 🛠 Technologies Used
 
 - Python
 - Pandas
 - NumPy
 - Matplotlib
-- Seaborn
+- NLTK
 - Scikit-learn
-- Google Colab
-- Azure Machine Learning
-- Git
-- GitHub
+- pyLDAvis
+
+--
 
 
+## 📊 Workflow
 
+1. Data Exploration of McDonald's Reviews  
+2. Text Cleaning & Preprocessing  
+3. Feature Extraction & Text Analysis  
+4. LDA Topic Modeling  
+5. Topic Evaluation & Interpretation  
+6. Visualization of Customer Feedback Trends
 
-## 🚀 Installation
+---
+
+## 📈 Key Findings
+
+The LDA model identified six major themes in customer reviews, including:
+
+- 🍟 Food Quality
+- 🚗 Drive-Thru & Wait Times
+- 😊 Customer Service
+- 📦 Order Accuracy
+- 🏪 Store Operations
+- 🪑 Dining Experience
+
+These insights help identify operational strengths and areas for improvement.
+
+---
+
+## 📷 Visualizations
+
+### Rating Distribution
+
+![Rating Distribution](images/rating_distribution.png)
+
+### Topics vs Customer Ratings
+
+![Topic Ratings](images/topic_ratings.png)
+
+---
+
+## 🚀 Getting Started
 
 Clone the repository:
 
@@ -141,46 +117,52 @@ Clone the repository:
 git clone https://github.com/EmmanuelEjima/Data-Science-Machine-Learning-Portfolio.git
 ```
 
-Install the required libraries:
+Navigate to the project folder:
+
+```bash
+cd Data-Science-Machine-Learning-Portfolio/projects/McDonalds-Topic-Modeling
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+Launch Jupyter Notebook:
 
-## 🎯 Currently Learning
+```bash
+jupyter notebook
+```
 
-- Machine Learning
-- Data Science
-- AI Applications
-- Azure Machine Learning
-- Git & GitHub Best Practices
+Open:
 
+```text
+McDonalds-Topic-Modeling.ipynb
+```
 
+Or click the **Open in Colab** badge above to run the notebook directly in your browser.
 
-## 👨‍💻 About Me
+---
 
-I'm a Chemical Engineering graduate with hands-on experience in:
+## 💡 Skills Demonstrated
 
-- Data Science
-- Machine Learning
-- Renewable Energy Systems
-- Solar Energy Solutions
+- Natural Language Processing (NLP)
+- Topic Modeling (LDA)
+- Text Preprocessing
+- Data Visualization
+- Exploratory Data Analysis (EDA)
+- Machine Learning with Python
 
-My goal is to build AI-driven and data-driven solutions that solve real-world engineering and business problems.
+---
 
+## 👨‍💻 Author
 
+**Emmanuel Ejima**
 
-## 📫 Connect With Me
+Chemical Engineering Graduate | Data Scientist | Machine Learning Enthusiast | AI Enthusiast
 
-- **LinkedIn:** https://linkedin.com/in/emmanuel-ejima
 - **GitHub:** https://github.com/EmmanuelEjima
-- **Email:** emmanuelejima12@gmail.com
-
-
-
-## ⭐ Support
-
-If you find this portfolio helpful, consider giving this repository a ⭐.
-
+- **LinkedIn:** *(Add your LinkedIn profile URL)*
+````
 
