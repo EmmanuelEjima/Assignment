@@ -9,12 +9,11 @@
   <img src="images/app-preview.jpg" alt="Breast Cancer Diagnostic Assistant" width="900">
 </p>
 
-An end-to-end Machine Learning web application that predicts whether a breast tumor is **Malignant** or **Benign** using the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset. The project demonstrates the complete machine learning lifecycle, from data preprocessing and model training to cloud deployment using **Streamlit Community Cloud**.
-
+An end-to-end Machine Learning web application that predicts whether a breast tumor is **Malignant** or **Benign** using the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset. The project demonstrates best practices in model development, deployment, and reproducible ML workflows.
 
 ## 📌 Project Overview
 
-This project implements a standardized Machine Learning pipeline for breast cancer diagnosis. Users can enter **30 clinical features** extracted from Fine Needle Aspirate (FNA) images of breast masses, and the application predicts whether the tumor is **Malignant** or **Benign**.
+This project implements a standardized Machine Learning pipeline for breast cancer diagnosis. Users can enter **30 clinical features** extracted from Fine Needle Aspirate (FNA) images of breast masses.
 
 The project demonstrates best practices in:
 
@@ -32,6 +31,7 @@ The project demonstrates best practices in:
 - Interactive Streamlit web application
 - Complete 30-feature clinical input interface
 - Real-time prediction (Malignant or Benign)
+- Confidence score for predictions
 - Logistic Regression classifier
 - StandardScaler preprocessing pipeline
 - Serialized model using Joblib
@@ -62,12 +62,20 @@ The project demonstrates best practices in:
 | **Dataset** | Wisconsin Diagnostic Breast Cancer (WDBC) |
 | **Cross-Validation Accuracy** | **≈98.1%** |
 | **Framework** | Scikit-learn |
+| **Training Samples** | 569 |
+| **Features** | 30 |
+
+### Detailed Metrics
+
+- **Precision**: High specificity for malignant classification
+- **Recall**: Excellent sensitivity for detecting malignant cases
+- **F1-Score**: Well-balanced performance across both classes
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python
+- Python 3.8+
 - Streamlit
 - Scikit-learn
 - Pandas
@@ -84,13 +92,15 @@ The project demonstrates best practices in:
 ```text
 breast-cancer-diagnostic-app/
 │
-├── Breast Cancer Detection Model.ipynb
-├── app.py
-├── README.md
-├── requirements.txt
-└── models/
-    ├── breast_cancer_model.pkl
-    └── scaler.pkl
+├── Breast Cancer Detection Model.ipynb    # Full model development & EDA
+├── app.py                                  # Streamlit web application
+├── README.md                               # Project documentation
+├── requirements.txt                        # Python dependencies
+├── models/
+│   ├── breast_cancer_model.pkl            # Trained Logistic Regression model
+│   └── scaler.pkl                         # StandardScaler for feature normalization
+└── images/
+    └── app-preview.jpg                    # Application screenshot
 ```
 
 ---
@@ -121,34 +131,104 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+The application will open in your default browser at `http://localhost:8501`
+
 ---
 
 ## 📚 Dataset
 
 The model was trained using the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset available through Scikit-learn.
 
-Each observation contains **30 numerical features** computed from digitized images of Fine Needle Aspirate (FNA) of breast masses and is classified as either:
+### Dataset Characteristics:
 
-- 🔴 **Malignant (Cancerous)**
-- 🟢 **Benign (Non-cancerous)**
+- **Sample Size**: 569 observations
+- **Features**: 30 numerical features computed from digitized FNA images
+- **Classes**: 2 (Malignant or Benign)
+
+Each observation is classified as either:
+
+- 🔴 **Malignant (Cancerous)** - Class: 0
+- 🟢 **Benign (Non-cancerous)** - Class: 1
+
+### Feature Categories:
+
+1. **Mean Features** (10): radius, texture, perimeter, area, smoothness, compactness, concavity, concave points, symmetry, fractal dimension
+2. **Standard Error Features** (10): Same measurements as above (error values)
+3. **Worst Features** (10): Largest values for each measurement type
+
+---
+
+## 💡 How to Interpret Results
+
+### Prediction Output:
+
+- **Malignant (🚨)**: Model detected feature patterns commonly associated with cancerous tumors
+- **Benign (✅)**: Model detected feature patterns consistent with non-cancerous tumors
+
+### Confidence Score:
+
+- Ranges from **0% to 100%**
+- Higher confidence indicates stronger pattern match
+- Example: 95% confidence means the model is 95% certain about the prediction
 
 ---
 
 ## 📌 Future Improvements
 
-- Prediction probability/confidence score
-- Interactive visual analytics
-- Feature importance visualization
-- Multiple machine learning model comparison
-- Explainable AI (SHAP/LIME)
-- Docker containerization
+- Enhanced prediction probability visualization
+- Interactive visual analytics & feature importance plots
+- Comparison with multiple ML algorithms (SVM, Random Forest, Neural Networks)
+- Explainable AI integration (SHAP/LIME)
+- Docker containerization for easier deployment
 - CI/CD deployment pipeline
+- Performance metrics dashboard
+- Model retraining automation
 
 ---
 
-## ⚠️ Disclaimer
+## ⚠️ Disclaimer & Limitations
 
-This application is intended for **educational, research, and portfolio purposes only**. It is **not a medical diagnostic system** and should not replace professional medical advice or clinical decision-making.
+### Important Disclaimer:
+
+This application is intended for **educational, research, and portfolio purposes only**. It is **not a medical diagnostic system** and should not replace professional medical advice or clinical diagnosis.
+
+### Known Limitations:
+
+1. **Dataset-Specific**: Model trained exclusively on WDBC dataset. Performance may vary on other breast cancer datasets.
+2. **Preprocessing Dependencies**: Predictions require exact StandardScaler normalization applied during training.
+3. **Model Interpretability**: Logistic Regression provides basic explainability but limited insight into complex feature interactions.
+4. **Clinical Validation**: Not clinically validated or FDA-approved.
+5. **Use Case**: For demonstration and learning purposes only.
+
+### Proper Use Cases:
+
+- ✅ Learning and understanding ML pipelines
+- ✅ Portfolio demonstration
+- ✅ Educational research
+- ✅ Model development practice
+
+### Not Suitable For:
+
+- ❌ Clinical decision-making
+- ❌ Patient diagnosis
+- ❌ Medical treatment planning
+- ❌ Healthcare deployment without clinical validation
+
+---
+
+## 📓 Jupyter Notebook
+
+The **`Breast Cancer Detection Model.ipynb`** file contains the complete project workflow including:
+
+- Data exploration and visualization
+- Exploratory Data Analysis (EDA)
+- Feature scaling and preprocessing
+- Model training and hyperparameter tuning
+- Cross-validation results
+- Performance evaluation
+- Model serialization
+
+This notebook is useful for understanding the full development process and can be run in Google Colab.
 
 ---
 
@@ -160,6 +240,7 @@ Chemical Engineer | Data Science & Machine Learning Enthusiast | Renewable Energ
 
 - **GitHub:** https://github.com/EmmanuelEjima
 - **LinkedIn:** https://linkedin.com/in/emmanuel-ejima
+- **Portfolio:** https://github.com/EmmanuelEjima/Data-Science-Machine-Learning-Portfolio
 
 ---
 
