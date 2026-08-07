@@ -1,8 +1,0 @@
-matplotlib
-nltk
-numpy
-pandas
-pyLDAvis
-scikit-learn
-seaborn
-wordcloud

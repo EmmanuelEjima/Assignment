@@ -3,6 +3,16 @@
     {
       "cell_type": "markdown",
       "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/EmmanuelEjima/Data-Science-Machine-Learning-Portfolio/blob/main/projects/McDonalds-Topic-Modeling\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
         "id": "db528ada"
       },
       "source": [
@@ -1231,37 +1241,26 @@
       "cell_type": "code",
       "execution_count": null,
       "metadata": {
-        "id": "VIRZ5d_Cm-3J",
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "outputId": "a2f96b0b-2134-4744-b090-bef310db35e9"
+        "id": "VIRZ5d_Cm-3J"
       },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stderr",
-          "text": [
-            "[nltk_data] Downloading package stopwords to /root/nltk_data...\n",
-            "[nltk_data]   Unzipping corpora/stopwords.zip.\n",
-            "[nltk_data] Downloading package punkt to /root/nltk_data...\n",
-            "[nltk_data]   Unzipping tokenizers/punkt.zip.\n",
-            "[nltk_data] Downloading package punkt_tab to /root/nltk_data...\n",
-            "[nltk_data]   Unzipping tokenizers/punkt_tab.zip.\n",
-            "[nltk_data] Downloading package wordnet to /root/nltk_data...\n",
-            "[nltk_data] Downloading package omw-1.4 to /root/nltk_data...\n"
-          ]
-        }
-      ],
+      "outputs": [],
       "source": [
         "!pip install -q nltk\n",
         "\n",
         "import nltk\n",
-        "nltk.download('stopwords')\n",
-        "nltk.download('punkt')\n",
-        "nltk.download('punkt_tab')\n",
-        "nltk.download('wordnet')\n",
-        "nltk.download('omw-1.4')\n",
+        "\n",
+        "# Function to safely download NLTK data to suppress repeated messages\n",
+        "def download_nltk_data(resource_path, download_name, quiet=True):\n",
+        "    try:\n",
+        "        nltk.data.find(resource_path)\n",
+        "    except LookupError:\n",
+        "        nltk.download(download_name, quiet=quiet)\n",
+        "\n",
+        "# Call the function for each required NLTK data package\n",
+        "download_nltk_data('corpora/stopwords', 'stopwords')\n",
+        "download_nltk_data('tokenizers/punkt', 'punkt')\n",
+        "download_nltk_data('corpora/wordnet', 'wordnet')\n",
+        "download_nltk_data('corpora/omw-1.4', 'omw-1.4')\n",
         "\n",
         "import re\n",
         "import pandas as pd\n",
@@ -3451,7 +3450,9 @@
   ],
   "metadata": {
     "colab": {
-      "provenance": []
+      "provenance": [],
+      "authorship_tag": "ABX9TyP813Bz8u/4CXgGDlrNsaXw",
+      "include_colab_link": true
     },
     "kernelspec": {
       "display_name": "Python 3",
